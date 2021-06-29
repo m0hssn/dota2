@@ -6,11 +6,9 @@ public abstract class Power {
 
     protected int level_;
     protected int availableIn;
-    protected final int effects;
 
     protected boolean active;
-    protected Power(int effects) {
-        this.effects = effects;
+    protected Power() {
         level_ = 1;
         active = false;
     }
@@ -43,8 +41,4 @@ public abstract class Power {
     }
 
     public abstract double getDamage();
-
-    public int getEffects() {
-        return effects;
-    }
 }

@@ -14,7 +14,7 @@ public class Knight extends Hero {
     private static final double LEVEL_UP_HP_REGENERATION = 0.34;
     private static final double LEVEL_UP_MANA_REGENERATION = 0.085;
 
-    public final Power BreathFire = new Power(10) {
+    public final Power BreathFire = new Power() {
         public final int[] damage = {90, 170, 240, 300};
         public final int[] mana_cost = {90, 100, 110, 120};
         public final int[] reload_duration = {14, 13, 12, 11};
@@ -47,22 +47,17 @@ public class Knight extends Hero {
             return damage[level_ - 1];
         }
 
-        @Override
-        public void levelUp() {
-            if(level_ < 3)
-                level_++;
-        }
 
         @Override
         public void activate() {
-            if(!active && isAvailable() && alive) {
+            if(!active && isAvailable()) {
                 super.activate();
                 availableIn = reload_duration[level_ - 1];
                 mana -= mana_cost[level_ - 1];
             }
         }
     };
-    public final Power DragonTail = new Power(1) {
+    public final Power DragonTail = new Power() {
         public final int[] damage = {70, 100, 130, 160};
         public final int[] mana_cost = {70, 80, 90, 100};
         public final int[] reload_duration = {16, 14, 12, 10};
@@ -97,14 +92,14 @@ public class Knight extends Hero {
 
         @Override
         public void activate() {
-            if(!active && isAvailable() && alive) {
+            if(!active && isAvailable()) {
                 super.activate();
                 availableIn = reload_duration[level_ - 1];
                 mana -= mana_cost[level_ - 1];
             }
         }
     };
-    public final Power ElderDragonForm = new Power(1) {
+    public final Power ElderDragonForm = new Power() {
         public final int[] damage = {30, 60, 80};
         public final int[] duration = {20, 30, 40};
         public final int mana_cost = 50;
@@ -146,7 +141,7 @@ public class Knight extends Hero {
 
         @Override
         public void activate() {
-            if(!active && isAvailable() && alive) {
+            if(!active && isAvailable()) {
                 super.activate();
                 dur = duration[level_ - 1];
                 availableIn = reload_duration;
@@ -159,10 +154,10 @@ public class Knight extends Hero {
         super(group);
         HP_MAX = 620;
         MANA_MAX = 291;
-        damage =291;
-        armor = 3.71;
+        damage = 55;
+        armor = 3.17;
         hp_regeneration = 2.1;
-        mana_regeneration =2.1;
+        mana_regeneration = 0.9;
         mana = MANA_MAX;
         hp = HP_MAX;
     }

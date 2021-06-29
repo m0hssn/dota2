@@ -14,7 +14,7 @@ public class Ranger extends Hero {
     private static final double LEVEL_UP_HP_REGENERATION = 0.19;
     private static final double LEVEL_UP_MANA_REGENERATION = 0.07;
 
-    private final Power FrostArrows = new Power(1) {
+    private final Power FrostArrows = new Power() {
 
         public final int[] damage = {10, 17, 25, 40};
         public final int mana_cost = 12;
@@ -55,7 +55,7 @@ public class Ranger extends Hero {
             }
         }
     };
-    private final Power MultiArrow = new Power(4) {
+    private final Power MultiArrow = new Power() {
         private final int[] mana_cost = {50, 70, 90, 110};
         private final int[] reload_duration = {26, 24, 22, 20};
 
@@ -103,7 +103,7 @@ public class Ranger extends Hero {
             }
         }
     };
-    private final Power Marksmanship = new Power(10) {
+    private final Power Marksmanship = new Power() {
         public final int[] damage = {300, 450, 550};
 
         @Override
