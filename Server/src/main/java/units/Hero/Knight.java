@@ -16,7 +16,7 @@ public class Knight extends Hero {
 
     public final Power BreathFire = new Power(10) {
         public final int[] damage = {90, 170, 240, 300};
-        public final int[] mana_cost = {90, 200, 110, 120};
+        public final int[] mana_cost = {90, 100, 110, 120};
         public final int[] reload_duration = {14, 13, 12, 11};
 
         @Override
