@@ -15,7 +15,7 @@ public class Handler {
 
     public static void main(String[] args) throws IOException {
         JSONObject o = new JSONObject();
-        o.put("players", "1v2");
+        o.put("players", "Green:Player1, Red:Player2");
         ServerSocket ss = new ServerSocket(6969);
         Socket socket = ss.accept();
         Socket socket1 = ss.accept();

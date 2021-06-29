@@ -48,7 +48,9 @@ public class Game {
         JSONObject o = new JSONObject();
         o.put("gameOver", "true");
         o.put("winner", "" /* enter winners name*/);
-        send(o.toString());
+        JSONArray a = new JSONArray();
+        a.put(o);
+        send(a.toString());
     }
 
     private void read() {
@@ -77,6 +79,8 @@ public class Game {
 
     private void send(String message) {
         try {
+            inputStreams[0].readUTF();
+            inputStreams[1].readUTF();
             outputStreams[0].writeUTF(message);
             outputStreams[1].writeUTF(message);
         } catch (IOException e) {
