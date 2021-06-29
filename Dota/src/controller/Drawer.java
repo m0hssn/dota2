@@ -71,7 +71,7 @@ public class Drawer extends AnimationTimer {
                 Circle circle = new Circle(0, 0, 1.5 * SCALE);
                 circle.setLayoutX(hero.getX() * SCALE);
                 circle.setLayoutY(hero.getY() * SCALE);
-                circle.setFill(new Color(0, 0.25, 1, 1));
+                circle.setFill(new Color(1, 0.8, 0.1, 1));
                 circles.add(circle);
                 map.getChildren().add(circle);
                 translateTransition(circle, hero);
@@ -86,7 +86,7 @@ public class Drawer extends AnimationTimer {
                 Circle circle = new Circle(0, 0, 1.5 * SCALE);
                 circle.setLayoutX(hero.getX() * SCALE);
                 circle.setLayoutY(hero.getY() * SCALE);
-                circle.setFill(new Color(0.56, 0.02, 0.87, 1));
+                circle.setFill(new Color(0.25, 0.85, 1, 1));
                 circles.add(circle);
                 map.getChildren().add(circle);
                 translateTransition(circle, hero);
