@@ -148,6 +148,12 @@ public class Knight extends Hero {
                 mana -= mana_cost;
             }
         }
+
+        @Override
+        public void levelUp() {
+            if(level_ < 3)
+                level_++;
+        }
     };
 
     public Knight(Group group) {
