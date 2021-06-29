@@ -15,7 +15,7 @@ public class Game {
     private final DataInputStream[] inputStreams;
     private final DataOutputStream[] outputStreams;
 
-    public Game(HeroType greenHero, HeroType redHero, DataInputStream[] inputStreams, DataOutputStream[] outputStreams) throws IOException {
+    public Game(HeroType greenHero, HeroType redHero, DataInputStream[] inputStreams, DataOutputStream[] outputStreams) {
 
         green = new Team(Group.Green, greenHero);
         red = new Team(Group.Red, redHero);
