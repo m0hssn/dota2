@@ -148,9 +148,6 @@ public abstract class Movable implements Unit {
         return point;
     }
 
-    public Lane getLane() {
-        return lane;
-    }
 
     @Override
     public String toString() {
