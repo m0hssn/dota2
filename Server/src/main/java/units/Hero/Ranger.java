@@ -141,6 +141,12 @@ public class Ranger extends Hero {
                 availableIn = 85;
             }
         }
+
+        @Override
+        public void levelUp() {
+            if(level_ < 3)
+                level_++;
+        }
     };
 
     public Ranger(Group group) {
