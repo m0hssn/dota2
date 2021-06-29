@@ -105,8 +105,8 @@ public class Drawer extends AnimationTimer {
     private static void translateTransition(Node node, Unit unit) {
         TranslateTransition translateTransition = new TranslateTransition();
         translateTransition.setNode(node);
-        translateTransition.setToX(unit.getFinal_x() - unit.getX());
-        translateTransition.setToY(unit.getFinal_y() - unit.getY());
+        translateTransition.setToX((unit.getFinal_x() - unit.getX()) * SCALE);
+        translateTransition.setToY((unit.getFinal_y() - unit.getY()) * SCALE);
         translateTransition.setDuration(Duration.seconds(1));
         translateTransition.setOnFinished(event -> translateTransition.getNode().setVisible(false));
         translateTransition.play();
