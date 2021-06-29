@@ -3,10 +3,10 @@ package Model;
 import javafx.scene.paint.Color;
 
 /**
- * The Creep class will be used to store the data recieved about creeps on the map from the server
+ * The Creep class will be used to store the data received about creeps on the map from the server
  */
 
-public class Creep {
+public class Creep implements Unit{
     /**
      * The current position of the creep
      */
@@ -32,18 +32,22 @@ public class Creep {
         this.color = color;
     }
 
+    @Override
     public double getX() {
         return x;
     }
 
+    @Override
     public double getY() {
         return y;
     }
 
+    @Override
     public double getFinal_x() {
         return final_x;
     }
 
+    @Override
     public double getFinal_y() {
         return final_y;
     }

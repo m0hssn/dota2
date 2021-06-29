@@ -38,10 +38,10 @@ public class Barrack extends Building{
         List<Creep> creeps = new ArrayList<>();
         if(creepType == CreepType.Melee) {
             for (int i = 0; i < 5; i++) {
-                creeps.add(new Melee(Melee.getPoint(lane, i), lane));
+                creeps.add(new Melee(Melee.getPoint(lane, i), lane, alive));
             }
         } else {
-            creeps.add(new Ranged(Ranged.getPoint(lane, 0), lane));
+            creeps.add(new Ranged(Ranged.getPoint(lane, 0), lane, alive));
         }
         return creeps;
     }
@@ -63,11 +63,14 @@ public class Barrack extends Building{
             hp -= (damage - RANGED_ARMOUR);
         }
         alive = hp > 0;
+        if(!alive) {
+            hp = 0;
+        }
     }
 
     @Override
     public void regenerate() {
-        if(creepType == CreepType.Melee) {
+        if(creepType == CreepType.Melee && alive) {
             hp += MELEE_HP_REGENERATION;
             if(hp > MELEE_HP_MAX)
                 hp = MELEE_HP_MAX;

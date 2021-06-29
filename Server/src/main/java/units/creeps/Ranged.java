@@ -19,9 +19,13 @@ public class Ranged extends Creep {
             0.5245283018867925,
             0.1564150943396226, 1);
 
-    public Ranged(Point2D point, Lane lane) {
+    public Ranged(Point2D point, Lane lane, boolean barrack) {
         super(point, lane);
-        hp = HP_MAX;
+        if(barrack) {
+            hp = HP_MAX;
+        } else {
+            hp = HP_MAX - 20;
+        }
     }
 
     @Override

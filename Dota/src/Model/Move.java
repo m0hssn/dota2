@@ -9,5 +9,6 @@ public enum Move {
     RIGHT,
     LEFT,
     DiagonalUP,
-    DiagonalDown
+    DiagonalDown,
+    Still
 }

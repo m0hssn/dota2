@@ -35,10 +35,6 @@ public abstract class Creep extends Movable {
         return alive;
     }
 
-    @Override
-    public String toString() {
-        return getPreviousX() + "," + getPreviousY() + "," + getX() + "," + getY();
-    }
 
     public static boolean intersects(Point2D creep, Point2D unit, CreepType creepType) {
         if(creepType == CreepType.Melee)

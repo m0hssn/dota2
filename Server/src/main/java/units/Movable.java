@@ -20,7 +20,7 @@ public abstract class Movable implements Unit {
     /**
      * The lane which the unit is moving on
      */
-    private Lane lane;
+    protected Lane lane;
 
     /**
      * For units to reach their destination from their beginning each creep has to make 4 turns
@@ -116,7 +116,7 @@ public abstract class Movable implements Unit {
      * @param third A 2DPoint which contains the data where the third turn is taken
      * @param last A 2DPoint which contains the data where the fourth and final turn is taken
      */
-    private void moveOne(Point2D first, Point2D second, Point2D third, Point2D last) {
+    protected void moveOne(Point2D first, Point2D second, Point2D third, Point2D last) {
         if(!first_turn) {
             point = moveOne(point, first);
             first_turn = point.distance(first) == 0;
@@ -146,6 +146,15 @@ public abstract class Movable implements Unit {
             point = destination;
         }
         return point;
+    }
+
+    public Lane getLane() {
+        return lane;
+    }
+
+    @Override
+    public String toString() {
+        return getPreviousX() + "," + getPreviousY() + "," + getX() + "," + getY();
     }
 
 }

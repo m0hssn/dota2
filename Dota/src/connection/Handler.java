@@ -2,106 +2,95 @@ package connection;
 
 import Model.Building;
 import Model.Creep;
-import Model.Move;
+import Model.Hero;
 import controller.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import utills.StaticData;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.concurrent.CountDownLatch;
+
 
 public class Handler {
-    private final Socket socket;
-    private final DataInputStream inputStream;
     private final DataOutputStream outputStream;
+    private final DataInputStream inputStream;
 
-    /**
-     * Used to establish an input stream and an output stream
-     *
-     * @param IP The servers ip
-     * @param port The port to connect to
-     * @throws IOException because server may not answer
-     */
+    private Creep[] creeps;
+    private Hero[] heroes;
+
     public Handler(String IP, int port) throws IOException {
-        socket = new Socket(IP, port);
-        inputStream = new DataInputStream(socket.getInputStream());
+        Socket socket = new Socket(IP, port);
+
         outputStream = new DataOutputStream(socket.getOutputStream());
+        inputStream = new DataInputStream(socket.getInputStream());
+
+        JSONObject object = new JSONObject(inputStream.readUTF());
+
+        StaticData.nameTag.setText(object.getString("players"));
     }
 
-    /**
-     * This function is used to read info about units and
-     *
-     * @return Creep array which contains x, y and color of creeps
-     * @throws IOException because server may be disconnected
-     */
-    public Creep[] read() throws IOException, InterruptedException {
+    public void turn() throws Exception  {
+        StaticData.management.acquire();
+
+        outputStream.writeUTF(StaticData.management.get().toString());
+
         JSONArray array = new JSONArray(inputStream.readUTF());
-        JSONObject green = array.getJSONObject(0);
-        JSONObject red = array.getJSONObject(1);
-        int numG = green.getInt("number");
-        int numR = red.getInt("number");
+        JSONObject object = (JSONObject) array.get(0);
 
-        if(numR !=0 || numG != 0) {
-            new Thread(()-> {
+        StaticData.gameOver = object.getString("gameOver").equals("true");
 
-                if(numG != 0) {
-                    Building[] greens = new Building[numG];
-                    for (int i = 0; i < numG; i++) {
-                        greens[i] = Building.parse(green.getString("b" + i));
-                    }
-                    Map.Green.receiveDamage(greens);
-                }
-                if(numR != 0) {
-                    Building[] reds = new Building[numR];
-                    for (int i = 0; i < numR; i++) {
-                        reds[i] = Building.parse(red.getString("b" + i));
-                    }
-                    Map.Red.receiveDamage(reds);
-                }
-            }).start();
+        if(!StaticData.gameOver) {
+            buildings((JSONObject) array.get(1), (JSONObject) array.get(2));
+            creeps = creeps((JSONObject) array.get(3));
+            heroes = heroes((JSONObject) array.get(4));
+
+            StaticData.management.set((JSONObject) array.get(5));
+
+            StaticData.management.release();
+        }else {
+            StaticData.winner = object.getString("winner");
         }
+    }
 
-        JSONObject creepsData = array.getJSONObject(2);
-        int num = creepsData.getInt("number");
-        Creep[] creeps = new Creep[num];
-        CountDownLatch latch = new CountDownLatch(1);
-
-        new Thread(() -> {
-            for (int i = 0; i < num; i++) {
-                creeps[i] = Creep.parse(creepsData.getString("creep" + i));
-            }
-            latch.countDown();
-        }).start();
-
-        latch.await();
+    public Creep[] getCreeps() {
         return creeps;
     }
 
-    /**
-     * @param move command sent to server about the movement of hero
-     * @throws IOException because server may be disconnected
-     */
-    public void write(Move move) throws IOException {
-        JSONObject object = new JSONObject();
-        object.put("move", move);
-        outputStream.writeUTF(object.toString());
+    public Hero[] getHeroes() {
+        return heroes;
     }
 
+    private static void buildings(JSONObject green, JSONObject red) {
+        Map.Green.receiveDamage(getBuildings(green));
+        Map.Red.receiveDamage(getBuildings(red));
+    }
 
-    /**
-     * This function is used to disconnect from the server
-     *
-     * @throws IOException because server may be disconnected
-     */
-    public void close() throws IOException {
-        JSONObject object = new JSONObject();
-        object.put("command", "exit");
-        outputStream.writeUTF(object.toString());
-        inputStream.close();
-        outputStream.close();
-        socket.close();
+    private static Building[] getBuildings(JSONObject object) {
+        int num = Integer.parseInt(object.getString("number"));
+        Building[] buildings = new Building[num];
+        for (int i = 0; i < num; i++) {
+            buildings[i] = Building.parse(object.getString("b" + i));
+        }
+        return buildings;
+    }
+
+    private static Creep[] creeps(JSONObject object) {
+        int num = Integer.parseInt(object.getString("number"));
+        Creep[] creeps = new Creep[num];
+        for (int i = 0; i < num; i++) {
+            creeps[i] = Creep.parse(object.getString("creep" + i));
+        }
+        return creeps;
+    }
+
+    private static Hero[] heroes(JSONObject object) {
+        Hero[] heroes = new Hero[2];
+        for (int i = 0; i < 2; i++) {
+            heroes[i] = Hero.parse(object.getString("hero" + i));
+        }
+        return heroes;
     }
 }

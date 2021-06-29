@@ -21,9 +21,13 @@ public class Melee extends Creep {
             0.3245283018867925,
             0.1264150943396226, 1);
 
-    public Melee(Point2D point, Lane lane) {
+    public Melee(Point2D point, Lane lane, boolean barrack) {
         super(point, lane);
-        hp = HP_MAX;
+        if(barrack) {
+            hp = HP_MAX;
+        } else {
+            hp = HP_MAX - 20;
+        }
     }
 
     @Override

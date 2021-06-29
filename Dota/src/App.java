@@ -3,15 +3,15 @@ import controller.Drawer;
 import controller.PageLoader;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import static utills.StaticData.handler;
+import utills.StaticData;
 
 
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        StaticData.gameOver = false;
         PageLoader.openPage("Map");
-        handler = new Handler("localhost", 6969);
+        StaticData.handler = new Handler("localhost", 6969);
         Drawer drawer = new Drawer();
         drawer.start();
     }

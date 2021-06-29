@@ -11,4 +11,5 @@ public enum Lane {
     MIDDLE_RED,
     LOW_GREEN,
     LOW_RED,
+    NO_LANE
 }

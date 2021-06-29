@@ -23,4 +23,5 @@ public class Team {
             buildings.get(b.getNumber()).setFill(c);
         }
     }
+
 }

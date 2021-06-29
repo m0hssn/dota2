@@ -17,6 +17,9 @@ public class Tower extends Building {
     public void getHit(double damage) {
         hp -= (damage - ARMOUR);
         alive = hp > 0;
+        if(!alive) {
+            hp = 0;
+        }
     }
 
     public double getDamage() {
