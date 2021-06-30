@@ -10,7 +10,7 @@ import units.Unit;
 
 
 public abstract class Hero implements Unit {
-    public static final double[] req = {230, 370, 480, 580, 600, 720, 750, 890, 930, 970, 1010};
+    protected static final double[] req = {230, 370, 480, 580, 600, 720, 750, 890, 930, 970, 1010};
 
 
     protected final Group group;
@@ -62,7 +62,7 @@ public abstract class Hero implements Unit {
     @Override
     public void regenerate() {
         if(alive) {
-            hp +=hp_regeneration;
+            hp += hp_regeneration;
             mana += mana_regeneration;
             if(hp > HP_MAX ) {
                 hp = HP_MAX;
@@ -73,9 +73,6 @@ public abstract class Hero implements Unit {
         }
     }
 
-    public Point2D getPrevious() {
-        return previous;
-    }
 
     @Override
     public void getHit(double damage) {
@@ -229,9 +226,9 @@ public abstract class Hero implements Unit {
 
     public static boolean intersects(Point2D point, Point2D point2, HeroType type) {
         if(type == HeroType.Knight) {
-            return point.distance(point2) <= 2;
-        } else if(type == HeroType.Ranger) {
             return point.distance(point2) <= 4;
+        } else if(type == HeroType.Ranger) {
+            return point.distance(point2) <= 6;
         } else {
             return false;
         }

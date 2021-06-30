@@ -41,6 +41,6 @@ public class Tower extends Building {
     }
 
     public static boolean intersects (Point2D tower, Point2D unit){
-        return tower.distance(unit) <= 6;
+        return tower.distance(unit) <= 7;
     }
 }

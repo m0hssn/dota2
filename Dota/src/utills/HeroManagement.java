@@ -21,7 +21,7 @@ public class HeroManagement {
 
     private final boolean[] keysStatus;
 
-    private final boolean[] keyDiasble;
+    private final boolean[] keyDisable;
 
     private final double[] powerMana;
 
@@ -32,7 +32,7 @@ public class HeroManagement {
         move = Move.Still;
         keysStatus = new boolean[3];
         powerMana = new double[3];
-        keyDiasble = new boolean[3];
+        keyDisable = new boolean[3];
         level = 1;
     }
 
@@ -59,7 +59,7 @@ public class HeroManagement {
         for (int i = 0; i < 3; i++) {
             powerMana[i] = Double.parseDouble(object.getString("powerMana" + i));
             keysStatus[i] = object.getString("key" + i).equals("true");
-            keyDiasble[i] = object.getString("keyDisable" + i).equals("true");
+            keyDisable[i] = object.getString("keyDisable" + i).equals("true");
         }
 
         canLevelUp = object.getString("canLevelUp").equals("true");
@@ -73,9 +73,9 @@ public class HeroManagement {
             move = Move.Still;
         }
 
-        StaticData.power1.setDisable(keyDiasble[0]);
-        StaticData.power2.setDisable(keyDiasble[1]);
-        StaticData.power3.setDisable(keyDiasble[2]);
+        StaticData.power1.setDisable(keyDisable[0]);
+        StaticData.power2.setDisable(keyDisable[1]);
+        StaticData.power3.setDisable(keyDisable[2]);
 
         StaticData.power1.setSelected(keysStatus[0]);
         StaticData.power2.setSelected(keysStatus[1]);

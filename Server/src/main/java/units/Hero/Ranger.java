@@ -21,7 +21,7 @@ public class Ranger extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <= 4;
+            return position.distance(point) <= 6;
         }
 
         @Override
@@ -63,7 +63,7 @@ public class Ranger extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <= 4;
+            return position.distance(point) <= 6;
         }
 
         @Override
@@ -108,7 +108,7 @@ public class Ranger extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <= 4;
+            return position.distance(point) <= 6;
         }
 
         @Override

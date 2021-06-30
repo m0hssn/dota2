@@ -181,7 +181,6 @@ public class Team {
 
     private void move(List<Creep> creeps, List<Unit> row, Hero hero) {
         creeps.forEach(creep -> {
-            boolean b = true;
             List<Unit> units = new ArrayList<>();
 
             row.forEach(unit -> {
@@ -192,10 +191,9 @@ public class Team {
 
             if(Creep.intersects(creep.getPoint(), hero.getPoint(), creep.getType()) && hero.isAlive()) {
                 units.add(hero);
-                b = false;
             }
 
-            if(units.size() != 0 || !b) {
+            if(units.size() != 0) {
                 units.get(random.nextInt(units.size())).getHit(creep.getDamage());
             } else {
                 creep.moveOne();
@@ -385,6 +383,7 @@ public class Team {
             units.addAll(other.topRow);
             units.addAll(other.lowRow);
             units.addAll(other.midRow);
+            units.add(other.hero);
             moveHero(units, other.hero);
         }
 

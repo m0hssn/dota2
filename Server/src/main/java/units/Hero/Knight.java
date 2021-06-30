@@ -21,7 +21,7 @@ public class Knight extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <=4;
+            return position.distance(point) <= 6;
         }
 
         @Override
@@ -64,7 +64,7 @@ public class Knight extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <= 2;
+            return position.distance(point) <= 4;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class Knight extends Hero {
 
         @Override
         public boolean inRange(Point2D point) {
-            return position.distance(point) <= 4;
+            return position.distance(point) <= 6;
         }
 
         @Override

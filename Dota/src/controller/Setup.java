@@ -87,8 +87,5 @@ public class Setup {
         label.setFont(font);
         label.setPrefWidth(50 * SCALE);
         label.setPrefHeight(20 * SCALE);
-//        label.setScaleX(SCALE);
-//        label.setScaleY(SCALE);
-//        label.setScaleZ(SCALE);
     }
 }

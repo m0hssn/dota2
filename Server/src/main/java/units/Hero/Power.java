@@ -8,6 +8,7 @@ public abstract class Power {
     protected int availableIn;
 
     protected boolean active;
+
     protected Power() {
         level_ = 1;
         active = false;

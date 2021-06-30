@@ -45,6 +45,7 @@ public class Game {
                 write();
             }
         }
+
         JSONObject o = new JSONObject();
         o.put("gameOver", "true");
         o.put("winner", "" /* enter winners name*/);
@@ -128,6 +129,7 @@ public class Game {
             e.printStackTrace();
         }
     }
+
     private void sendMessage(JSONArray array, Group group) throws IOException {
         JSONArray a = new JSONArray(array);
         if(group == Group.Green) {

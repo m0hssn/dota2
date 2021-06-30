@@ -20,7 +20,7 @@ public abstract class Movable implements Unit {
     /**
      * The lane which the unit is moving on
      */
-    protected Lane lane;
+    private final Lane lane;
 
     /**
      * For units to reach their destination from their beginning each creep has to make 4 turns
@@ -138,7 +138,7 @@ public abstract class Movable implements Unit {
      * @param destination The point where the unit must get close to
      * @return The position of the unit moved 1.5 pixels closer to the destination
      */
-    public static Point2D moveOne(Point2D point,Point2D destination) {
+    public static Point2D moveOne(Point2D point, Point2D destination) {
         Point2D vector = destination.subtract(point).normalize();
         vector = vector.multiply(1.5);
         point = point.add(vector);

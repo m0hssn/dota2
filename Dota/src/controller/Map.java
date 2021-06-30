@@ -115,9 +115,7 @@ public class Map implements Initializable {
         Red = new Team(redTowers, Color.RED);
         Green = new Team(greenTowers, Color.GREEN);
 
-        hp.setProgress(1);
         hp.setStyle("-fx-accent: green");
-        mana.setProgress(1);
 
         label.setStyle("-fx-background-color: lightgrey;-fx-background-radius: 2;-fx-font-weight: bold");
 

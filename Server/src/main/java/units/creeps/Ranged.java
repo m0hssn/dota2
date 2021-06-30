@@ -20,7 +20,7 @@ public class Ranged extends Creep {
             0.1564150943396226, 1);
 
     public Ranged(Point2D point, Lane lane, boolean barrack) {
-        super(point, lane);
+        super(point, lane, barrack);
         if(barrack) {
             hp = HP_MAX;
         } else {
@@ -30,7 +30,11 @@ public class Ranged extends Creep {
 
     @Override
     public double getDamage() {
-        return DAMAGE;
+        if(barrack) {
+            return DAMAGE;
+        } else {
+            return DAMAGE - 3;
+        }
     }
 
     @Override
@@ -42,8 +46,14 @@ public class Ranged extends Creep {
     @Override
     public void regenerate() {
         hp += HP_REGENERATION;
-        if(hp > HP_MAX) {
-            hp = HP_MAX;
+        if(barrack){
+            if(hp > HP_MAX) {
+                hp = HP_MAX;
+            }
+        } else {
+            if(hp > HP_MAX - 20) {
+                hp = HP_MAX - 20;
+            }
         }
     }
 

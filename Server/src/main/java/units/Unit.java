@@ -10,23 +10,23 @@ public interface Unit {
      *
      * @return whether the unit is alive or not
      */
-    public boolean isAlive();
+    boolean isAlive();
     /**
      *
      * @return current position of unit
      */
-    public Point2D getPoint();
+    Point2D getPoint();
     /**
      * @param damage the damage received
      */
-    public void getHit(double damage);
+    void getHit(double damage);
     /**
      * the hp and mana (if the unit has hp_regeneration and mana_regeneration rates)
      */
-    public void regenerate();
+    void regenerate();
     /**
      *
      * @return the amount of experience added to the hero which killed this unit
      */
-    public double getExp();
+    double getExp();
 }

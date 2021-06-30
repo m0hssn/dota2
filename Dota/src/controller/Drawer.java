@@ -31,7 +31,9 @@ public class Drawer extends AnimationTimer {
             time = now;
             try {
                 gc.clearRect(0, 0, 200 * SCALE, 200 * SCALE);
+
                 StaticData.handler.turn();
+
                 if(gameOver) {
                     showText(winner + " won");
                     this.stop();
