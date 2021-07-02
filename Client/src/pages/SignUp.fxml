@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="846.0" style="-fx-background-color: #2D3447; -fx-border-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpController">
+   <children>
+      <JFXTextField fx:id="username" focusColor="#b5b5b5" labelFloat="true" layoutX="288.0" layoutY="120.0" prefHeight="49.0" prefWidth="271.0" promptText=" Username" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#b5b5b5" labelFloat="true" layoutX="288.0" layoutY="284.0" prefHeight="49.0" prefWidth="271.0" promptText=" Password" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton layoutX="288.0" layoutY="360.0" onAction="#signUpClick" prefHeight="39.0" prefWidth="271.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3; -fx-background-radius: 20;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="21.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="123.0" fitWidth="131.0" layoutX="362.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/loading.gif" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="310.0" layoutY="-10.0" prefHeight="101.0" prefWidth="227.0" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="BlackChancery" size="64.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="238.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/username.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="239.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/Password.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="email" focusColor="#b5b5b5" labelFloat="true" layoutX="288.0" layoutY="204.0" prefHeight="49.0" prefWidth="271.0" promptText=" Email" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="49.0" fitWidth="56.0" layoutX="235.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/email.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" alignment="CENTER" layoutX="632.0" layoutY="355.0" prefHeight="49.0" prefWidth="200.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font></Label>
+      <JFXButton layoutX="8.0" layoutY="480.0" onAction="#backClick" prefHeight="39.0" prefWidth="109.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="21.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

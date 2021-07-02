@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="map" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Map">
+   <ImageView fx:id="background" fitHeight="200.0" fitWidth="250.0">
+      <image>
+         <Image url="@../background.jpg" />
+      </image>
+   </ImageView>
+    <ImageView fx:id="minimap" fitHeight="200.0" fitWidth="200.0">
+        <Image url="@../minimap.png" />
+    </ImageView>
+    <Rectangle fx:id="BaseGreen" fill="#20d300" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="8.0" y="192.0" />
+    <Circle fx:id="AncientGreen" fill="#20d300" layoutX="13.0" layoutY="186.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Bottom1" fill="#20d300" layoutX="24.0" layoutY="185.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Top1" fill="#20d300" layoutX="15.0" layoutY="176.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Top2" fill="#20d300" layoutX="15.0" layoutY="155.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Top3" fill="#20d300" layoutX="15.0" layoutY="125.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Top4" fill="#20d300" layoutX="15.0" layoutY="90.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Bottom2" fill="#20d300" layoutX="45.0" layoutY="185.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Bottom3" fill="#20d300" layoutX="108.0" layoutY="185.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Bottom4" fill="#20d300" layoutX="165.0" layoutY="185.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Rectangle fx:id="BaseRed" fill="#fc0000" height="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="8.0" x="192.0" />
+    <Circle fx:id="AncientRed" fill="#fc0000" layoutX="185.0" layoutY="24.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Top1" fill="RED" layoutX="173.0" layoutY="24.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Top2" fill="RED" layoutX="150.0" layoutY="24.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Top3" fill="RED" layoutX="106.0" layoutY="24.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Top4" fill="RED" layoutX="36.0" layoutY="24.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Bottom1" fill="RED" layoutX="185.0" layoutY="36.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Bottom2" fill="RED" layoutX="185.0" layoutY="59.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Bottom3" fill="RED" layoutX="185.0" layoutY="92.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Bottom4" fill="RED" layoutX="185.0" layoutY="118.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Middle1" fill="#20d300" layoutX="35.0" layoutY="165.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Middle2" fill="#20d300" layoutX="55.0" layoutY="145.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="GreenTower_Middle3" fill="#20d300" layoutX="78.0" layoutY="122.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Middle1" fill="RED" layoutX="161.0" layoutY="51.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Middle2" fill="RED" layoutX="138.0" layoutY="72.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Circle fx:id="RedTower_Middle3" fill="RED" layoutX="106.0" layoutY="94.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+    <Rectangle fx:id="GreenMiddle2" fill="#20d300" height="3.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="25.5" y="171.0" />
+    <Rectangle fx:id="GreenMiddle1" fill="#20d300" height="3.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="29.0" y="167.5" />
+    <Rectangle fx:id="GreenBottom1" fill="#20d300" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="37.0" y="183.5" />
+    <Rectangle fx:id="GreenBottom2" fill="#20d300" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="30.0" y="183.5" />
+    <Rectangle fx:id="GreenTop1" fill="#20d300" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="13.5" y="160.0" />
+    <Rectangle fx:id="GreenTop2" fill="#20d300" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="13.5" y="167.0" />
+    <Rectangle fx:id="RedMiddle1" fill="RED" height="3.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="163.0" y="46.0" />
+    <Rectangle fx:id="RedMiddle2" fill="RED" height="3.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="167.0" y="42.0" />
+    <Rectangle fx:id="RedBottom2" fill="RED" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="183.5" y="43.0" />
+    <Rectangle fx:id="RedBottom1" fill="RED" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="183.5" y="50.0" />
+    <Rectangle fx:id="RedTop2" fill="RED" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="163.0" y="22.5" />
+    <Rectangle fx:id="RedTop1" fill="RED" height="3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" x="156.0" y="22.5" />
+   <AnchorPane fx:id="pane" layoutX="244.0" layoutY="-18.0" prefHeight="66.0" prefWidth="16.0" AnchorPane.bottomAnchor="152.0" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="-18.0" />
+   <ToggleButton fx:id="power1" layoutX="214.0" layoutY="64.0" mnemonicParsing="false" onAction="#power" text="power 1">
+      <font>
+         <Font size="5.0" />
+      </font>
+   </ToggleButton>
+   <ToggleButton fx:id="power2" layoutX="214.0" layoutY="79.0" mnemonicParsing="false" onAction="#power" text="power 2">
+      <font>
+         <Font size="5.0" />
+      </font>
+   </ToggleButton>
+   <ToggleButton fx:id="power3" layoutX="214.0" layoutY="93.0" mnemonicParsing="false" onAction="#power" text="power 3">
+      <font>
+         <Font size="5.0" />
+      </font>
+   </ToggleButton>
+   <ProgressBar fx:id="hp" layoutX="202.0" layoutY="18.0" prefHeight="8.0" prefWidth="48.0" progress="0.0" />
+   <ProgressBar fx:id="mana" layoutX="202.0" layoutY="36.0" prefHeight="8.0" prefWidth="48.0" progress="0.0" />
+   <Label fx:id="label" layoutX="200.0" layoutY="125.0" prefWidth="50.0" text="level = 1">
+      <font>
+         <Font size="5.0" />
+      </font>
+   </Label>
+   <Button fx:id="levelup" layoutX="214.0" layoutY="165.0" mnemonicParsing="false" onAction="#levelUp" text="level up">
+      <font>
+         <Font size="5.0" />
+      </font>
+   </Button>
+    <Canvas fx:id="canvas" height="200.0" width="200.0" />
+   <Label fx:id="nameTag" text="Label" />
+</AnchorPane>

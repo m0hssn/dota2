@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="controllers.NotificationController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="196.0" fitWidth="555.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/frame.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="5.0" layoutY="12.0" prefHeight="174.0" prefWidth="545.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="messageLBL" alignment="CENTER" prefHeight="68.0" prefWidth="545.0" textFill="#356477">
+               <effect>
+                  <Bloom />
+               </effect>
+               <font>
+                  <Font name="BlackChancery" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="155.0" layoutX="348.0" layoutY="118.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../media/frame2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="155.0" layoutX="56.0" layoutY="118.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../media/frame2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="80.0" layoutY="124.0" onAction="#acceptAction" prefHeight="27.0" prefWidth="108.0" style="-fx-background-color: #356477;" text="accept" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="372.0" layoutY="124.0" onAction="#rejectAction" prefHeight="27.0" prefWidth="108.0" style="-fx-background-color: #356477;" text="reject" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

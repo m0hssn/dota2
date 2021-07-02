@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+   <children>
+      <ImageView fitHeight="734.0" fitWidth="726.0" layoutY="-8.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/format1.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="289.0" layoutY="278.0" onAction="#battleAction" prefHeight="45.0" prefWidth="165.0" text="Battle" textFill="#356477">
+         <effect>
+            <Bloom />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="289.0" layoutY="387.0" onAction="#settingsAction" prefHeight="45.0" prefWidth="165.0" text="Settings" textFill="#356477">
+         <effect>
+            <Bloom />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="289.0" layoutY="493.0" onAction="#quitAction" prefHeight="45.0" prefWidth="165.0" text="Quit" textFill="#356477">
+         <effect>
+            <Bloom />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

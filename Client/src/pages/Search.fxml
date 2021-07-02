@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="controllers.SearchController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="726.0" fitWidth="726.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/menu photo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="125.0" layoutY="120.0" prefHeight="489.0" prefWidth="493.0" style="-fx-background-color: white;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="405.0" layoutX="1.0" layoutY="82.0" stroke="#39bbc7" strokeType="INSIDE" strokeWidth="3.0" width="491.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <ImageView fitHeight="86.0" fitWidth="493.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../media/frame.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutY="-2.0" prefHeight="86.0" prefWidth="493.0" text="Search A Player Name To Battle " textFill="#00b7ff">
+               <effect>
+                  <Bloom />
+               </effect>
+               <font>
+                  <Font name="BlackChancery" size="33.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="147.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/frame2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="178.0" layoutY="321.0" onAction="#searchAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: #0b3642;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="148.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/frame2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="179.0" layoutY="398.0" onAction="#menuAction" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: #0b3642;" text="Main Menu" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="textField" focusColor="#00b7ff" labelFloat="true" layoutX="108.0" layoutY="144.0" prefHeight="54.0" prefWidth="280.0" promptText=" Search Username" unFocusColor="#00b7ff">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="logLBL" alignment="CENTER" layoutX="4.0" layoutY="220.0" prefHeight="74.0" prefWidth="485.0" textFill="#00b7ff">
+               <font>
+                  <Font name="BlackChancery" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

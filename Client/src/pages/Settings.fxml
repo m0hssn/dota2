@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController">
+   <children>
+      <ImageView fitHeight="733.0" fitWidth="726.0" layoutY="-7.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/format1.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="musicBTN" layoutX="288.0" layoutY="387.0" onAction="#musicAction" prefHeight="51.0" prefWidth="168.0" text="Music(Off)" textFill="#356477">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </JFXButton>
+      <JFXButton layoutX="286.0" layoutY="493.0" onAction="#quitAction" prefHeight="51.0" prefWidth="168.0" text="Quit" textFill="#356477">
+         <effect>
+            <Bloom />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="26.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="287.0" layoutY="278.0" onAction="#menuAction" prefHeight="51.0" prefWidth="168.0" text="Main Menu" textFill="#356477">
+         <effect>
+            <Bloom />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="TOP_CENTER" layoutX="186.0" layoutY="147.0" prefHeight="79.0" prefWidth="372.0" style="-fx-background-color: #0a0b0f;" text="Settings" textFill="WHITE">
+         <font>
+            <Font name="BlackChancery" size="51.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

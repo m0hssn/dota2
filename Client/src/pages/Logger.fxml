@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoggerController">
+   <children>
+      <ImageView fitHeight="196.0" fitWidth="555.0" pickOnBounds="true">
+         <image>
+            <Image url="@../media/frame.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="5.0" layoutY="12.0" prefHeight="174.0" prefWidth="545.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="messageLBL" alignment="TOP_CENTER" layoutY="3.0" prefHeight="68.0" prefWidth="545.0" text="Your Request Was Accepted" textFill="#356477">
+               <effect>
+                  <Bloom />
+               </effect>
+               <font>
+                  <Font name="BlackChancery" size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="155.0" layoutX="195.0" layoutY="125.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../media/frame2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="219.0" layoutY="131.0" onAction="#acceptAction" prefHeight="27.0" prefWidth="108.0" style="-fx-background-color: #356477;" text="Yes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="messageLBL1" alignment="TOP_CENTER" layoutX="4.0" layoutY="55.0" prefHeight="68.0" prefWidth="537.0" text="Ready To Fight ?" textFill="#356477">
+               <effect>
+                  <Bloom />
+               </effect>
+               <font>
+                  <Font name="BlackChancery" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

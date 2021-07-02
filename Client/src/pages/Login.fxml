@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="846.0" style="-fx-background-color: #2D3447; -fx-border-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <JFXTextField fx:id="username" focusColor="#b5b5b5" labelFloat="true" layoutX="288.0" layoutY="184.0" prefHeight="49.0" prefWidth="271.0" promptText=" Username" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#b5b5b5" labelFloat="true" layoutX="288.0" layoutY="266.0" prefHeight="49.0" prefWidth="271.0" promptText=" Password" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton layoutX="288.0" layoutY="353.0" onAction="#loginClick" prefHeight="39.0" prefWidth="271.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3; -fx-background-radius: 20;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="711.0" layoutY="15.0" onAction="#signUpClick" prefHeight="29.0" prefWidth="121.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3; -fx-background-radius: 20;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="21.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></JFXButton>
+      <ImageView fitHeight="123.0" fitWidth="131.0" layoutX="362.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/loading.gif" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="310.0" layoutY="6.0" prefHeight="101.0" prefWidth="227.0" text="Login" textFill="WHITE">
+         <font>
+            <Font name="BlackChancery" size="64.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="238.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/username.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="239.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/Password.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" alignment="CENTER" layoutX="609.0" layoutY="275.0" prefHeight="66.0" prefWidth="227.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <JFXButton layoutX="14.0" layoutY="474.0" onAction="#quitClick" prefHeight="39.0" prefWidth="90.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3; -fx-background-radius: 20;" text="Quit" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="21.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
